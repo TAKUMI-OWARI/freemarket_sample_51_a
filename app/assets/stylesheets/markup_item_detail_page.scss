@@ -9,6 +9,7 @@
 
 .mercari-header {
   @include header_after_login;
+  color: yellow;
 }
 .item-container {
   //margin: 40px auto 0;
