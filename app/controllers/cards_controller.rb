@@ -14,7 +14,7 @@ class CardsController < ApplicationController
       )
       @card = Card.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to card_mypage_index_path(@card)
+        redirect_to card_mypage_index_path(@card.user_id)
       else
         redirect_to action: "pay"
       end

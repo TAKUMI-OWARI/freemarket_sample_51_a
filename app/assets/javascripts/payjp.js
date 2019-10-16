@@ -10,10 +10,8 @@ $(function() {
       exp_month: parseInt($("#exp_month").val()),
       exp_year: parseInt($("#exp_year").val())
     };
-    console.log(card);
     Payjp.createToken(card, function(status, response) {
       if (status == 200) {
-        console.log(status);
         $("#number").removeAttr("name");
         $("#cvc").removeAttr("name");
         $("#exp_month").removeAttr("name");
@@ -22,7 +20,6 @@ $(function() {
         form.get(0).submit();
         alert("登録が完了しました");
       } else {
-        console.log(status);
         alert("カード情報が正しくありません。") 
       }
     });

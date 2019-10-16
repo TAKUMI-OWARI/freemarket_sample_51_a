@@ -1,4 +1,4 @@
 = form_with(url: search_products_path, local: true, html: {class: 'mercari-header__inner__top__form', id: 'search_form'}) do |f|
-  = f.text_field :name, value: params[:name], placeholder: "何かお探しですか？", maxlength: "100", class: "mercari-header__inner__top__form__input", id: "inputName"
+  = f.text_field :name, placeholder: "何かお探しですか？", maxlength: "100", class: "mercari-header__inner__top__form__input", id: "inputName"
   = button_tag type: "submit", onkeypress: "enter();", class: "mercari-header__inner__top__form__icon" do
     = fa_icon 'search'

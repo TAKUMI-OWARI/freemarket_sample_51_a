@@ -5,8 +5,8 @@
 @import "font-awesome";
 @import "slick";
 @import "slick-theme";
+// ここからconfig
 @import "config/color";
-@import "config/font-size";
 // ここからmixin
 @import "mixin/header_before_login";
 @import "mixin/header_after_login";
@@ -16,7 +16,7 @@
 @import "mixin/header_2";
 @import "mixin/footer_2";
 @import "mixin/mixin";
-// ここからmodule(下に書いた方が優勢して読み込まれる)
+// ここからstylesheets
 @import "./all-elements.scss";
 @import "./icon.scss";
 @import "./markup_top_page.scss";
@@ -25,6 +25,7 @@
 @import "./item_sell.scss"; 
 @import "./markup_item_purchase_confirmation_page.scss";
 @import "./markup_item_purchase_transaction_page.scss";
+// ここからmodule(下に書いた方が優勢して読み込まれる)
 @import "modules/format";
 @import "modules/mediaquery";
 @import "modules/breadcrumb";

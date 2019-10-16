@@ -79,9 +79,9 @@ class ProductsController < ApplicationController
       when "MasterCard"
         @card_src = "mastercard.png"
       when "American Express"
-        @card_src = "americanExpress.png"
+        @card_src = "americanExpress.jpg"
       when "Diners Club"
-        @card_src = "dinersClub.png"
+        @card_src = "dinersClub.jpg"
       when "Discover"
         @card_src = "discover.png"
       end

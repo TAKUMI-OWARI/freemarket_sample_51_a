@@ -3,6 +3,13 @@ class ApplicationController < ActionController::Base
   before_action :set_request_from
   before_action :authenticate_user!
   protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def configure_permitted_parameters
+    added_attrs = [ :nickname, :last_name, :first_name, :last_kana_name, :first_kana_name, :birthday]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
+  end  
 
   # どのページからリクエストが来たか保存する
   def set_request_from

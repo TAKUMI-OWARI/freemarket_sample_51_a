@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_kana_name, presence: true
   validates :first_kana_name, presence: true
-  validates :birthday, presence: true
+  # validates :birthday, presence: true
   validate :add_error
   def add_error
     unless password.match(/([0-9].*[a-zA-Z]|[a-zA-Z].*[0-9])/)
