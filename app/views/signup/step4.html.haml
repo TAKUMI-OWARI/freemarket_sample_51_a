@@ -27,6 +27,8 @@
     %main.signup-login__box
       .signup-login__box__title
         %h2 支払い方法
-      = render partial: 'signup/credit'
+        %form{action: "/", method: "post", class: "form-format"} 
+          .form-format__content
+            = render partial: 'credit'
     %footer.signup-login__footer
       = render partial: 'signup/footer'

@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    logger.debug @product.errors.inspect
     if @product.save
       redirect_to @product, notice: '出品が完了しました'
     else

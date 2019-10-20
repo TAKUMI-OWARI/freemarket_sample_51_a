@@ -632,7 +632,7 @@ body.exhibit {
   }
   .sell-dropbox-container{
     display: inline;
-    margin: 16px auto 0;    
+    margin: 16px auto 0;
     .sell-upload-items-container{
       display: inline;
       .sell-upload-items{
@@ -655,12 +655,10 @@ body.exhibit {
               background: #f5f5f5;  
               img{
                 position: absolute;
-                top: 50%;
+                top: 0;
                 left: 0;
-                -webkit-transform: translate(0, -50%);
-                transform: translate(0, -50%);
-                width: 100%;                
-              }            
+                width: 100%;
+              }
             }
             .sell-upload-button{
               font-size: 14px;
@@ -672,6 +670,7 @@ body.exhibit {
                 line-height: 44px;
                 text-align: center;
                 color: #0099e8;
+                z-index: 10;
               }
               .sell-upload-delete{
               box-sizing: border-box;
@@ -713,15 +712,15 @@ body.exhibit {
               height: 116px;
               line-height: 116px;
               img{
-                position: static;
+                position: static !important;
                 -webkit-transform: none;
-                transform: none;                
+                transform: none;
               }
             }
-          }            
+          }
         }
       }
-    }        
-  }  
+    }
+  }
 }
 

@@ -26,6 +26,7 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+|email|string|null: false,index: true|
 |first_name|string|null: false,index: true|
 |last_name|string|null: false,index: true|
 |first_kana_name|string|null: false|
@@ -36,6 +37,9 @@ Things you may want to cover:
 |payment_way|string|null: false|
 |birthday|string|
 |confirmation_document(本人確認書類)|text|
+|uid|string|
+|provider|string|
+
 ​
 ### Association
 - has_many :products
@@ -73,7 +77,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false,index: true|
 |user_id|references|null: false, foreign_key: true|
-|order_id|references|null: false, foreign_key: true|
+|status|integer|null: false, default: 0|
 |price|integer|null: false,index: true|
 |category_id|references|null: false, foreign_key: true,index: true|
 |brand_id|references|null: false, foreign_key: true,index: true|
@@ -100,7 +104,7 @@ Things you may want to cover:
 ## product_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image_name|text|null: false|
+|image|text|null: false|
 |product_id|references|null: false, foreign_key: true|
 ​
 ### Association
@@ -110,8 +114,8 @@ Things you may want to cover:
 ## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|product_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true, index: true|
+|product_id|references|null: false, foreign_key: true, index: true|
 ​
 ### Association
 - belongs_to :user
@@ -139,16 +143,15 @@ Things you may want to cover:
 - has_many :products
 ​
 ​
-## categorysテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|parent_id|references|null: false, foreign_key: true|
+|ancestry|string|index: true|
 ​
 ### Association
 - has_many :products
-- has_many children
-- belongs_to :parent
+- has_ancestry
 ​
 ​
 ## noticesテーブル
@@ -311,3 +314,13 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :order
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true|
+|customer_id|references|null: false|
+|card_id|references|null: false|
+​
+### Association
+- belongs_to :user
